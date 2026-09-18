@@ -1,0 +1,50 @@
+{
+  "name": "vscode-copy-path-with-lines",
+  "displayName": "Copy Path with Lines",
+  "description": "Copy the active file's name or path, including the selected line range (e.g. watch-run.fish:4-6)",
+  "version": "0.0.1",
+  "publisher": "danhinze",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hinzed1127/vscode-copy-path-with-lines"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyPathWithLines.copyFileName",
+        "title": "Copy File Name with Line Numbers"
+      },
+      {
+        "command": "copyPathWithLines.copyRelativePath",
+        "title": "Copy Relative Path with Line Numbers"
+      },
+      {
+        "command": "copyPathWithLines.copyAbsolutePath",
+        "title": "Copy Absolute Path with Line Numbers"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "vitest run",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0",
+    "@vscode/vsce": "^2.24.0"
+  }
+}
